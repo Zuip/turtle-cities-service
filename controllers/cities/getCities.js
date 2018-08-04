@@ -16,8 +16,8 @@ module.exports = function(req, res) {
       'Missing mandatory get parameter: language'
     ))
   ).then(
-    () => selectCities.withLanguage(
-      req.query.language
+    () => getSelectCitiesPromise(
+      req
     ).then(cities => {
       return cities.map(city => {
         cityDataNaming = new CityDataNaming();
@@ -35,3 +35,24 @@ module.exports = function(req, res) {
     // Promise chain ended
   })
 };
+
+function getSelectCitiesPromise(req) {
+
+  if(typeof req.params.cityId !== 'undefined') {
+    return selectCities.withCountryIdAndLanguage(
+      req.params.cityId,
+      req.query.language
+    );
+  }
+
+  if(typeof req.query.ids !== 'undefined') {
+    return selectCities.withIdsAndLanguage(
+      req.query.ids.split(','),
+      req.query.language
+    );
+  }
+
+  return selectCities.withLanguage(
+    req.query.language
+  );
+}
