@@ -13,7 +13,8 @@ module.exports = function() {
 
     this.APINamed = {
       id: this.DBNamed.country_id,
-      name: this.DBNamed.country_name
+      name: this.DBNamed.country_name,
+      urlName: this.DBNamed.country_url_name
     };
 
     if(isEmptyObject(this.APINamed)) {

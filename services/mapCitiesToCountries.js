@@ -18,6 +18,7 @@ function initializeCountry(city) {
   return {
     id: city.country.id,
     name: city.country.name,
+    urlName: city.country.urlName,
     cities: []
   };
 }
@@ -25,6 +26,7 @@ function initializeCountry(city) {
 function initializeCity(city) {
   return {
     id: city.id,
-    name: city.name
+    name: city.name,
+    urlName: city.urlName
   };
 }

@@ -1,13 +1,19 @@
 let db = require('../connection');
 
+let selectFields = `
+  city.id AS city_id,
+  country.id AS country_id,
+  translated_city.name AS city_name,
+  translated_city.url_name AS city_url_name,
+  translated_country.name AS country_name,
+  translated_country.url_name AS country_url_name
+`;
+
 module.exports = {
   withCountryIdAndLanguage(countryId, language) {
     return db.any(
       `
-        SELECT city.id AS city_id,
-               country.id AS country_id,
-               translated_city.name AS city_name,
-               translated_country.name AS country_name
+        SELECT ${selectFields}
         FROM country
         JOIN city ON city.country_id = country.id
         JOIN translated_city ON translated_city.city_id = city.id
@@ -24,10 +30,7 @@ module.exports = {
   withIdsAndLanguage(ids, language) {
     return db.any(
       `
-        SELECT city.id AS city_id,
-               country.id AS country_id,
-               translated_city.name AS city_name,
-               translated_country.name AS country_name
+        SELECT ${selectFields}
         FROM country
         JOIN city ON city.country_id = country.id
         JOIN translated_city ON translated_city.city_id = city.id
@@ -44,10 +47,7 @@ module.exports = {
   withLanguage(language) {
     return db.any(
       `
-        SELECT city.id AS city_id,
-               country.id AS country_id,
-               translated_city.name AS city_name,
-               translated_country.name AS country_name
+        SELECT ${selectFields}
         FROM country
         JOIN city ON city.country_id = country.id
         JOIN translated_city ON translated_city.city_id = city.id
