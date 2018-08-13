@@ -1,10 +1,20 @@
-let validateLanguage = require('../validators/validateLanguage');
+let getLanguage = require('../../integrations/languages/getLanguage');
 
-module.exports = function(language) {
+module.exports = function(language, sendFailure) {
 
-  if(validateLanguage(language)) {
-    return Promise.resolve();
+  if(typeof language === 'undefined') {
+    return sendFailure(
+      404,
+      'Missing mandatory get parameter: language'
+    );
   }
 
-  return Promise.reject();
-}
+  return getLanguage.withCode(language).then(
+    () => Promise.resolve()
+  ).catch(
+    () => sendFailure(
+      400,
+      'Invalid get parameter: language'
+    )
+  );
+};

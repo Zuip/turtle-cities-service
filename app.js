@@ -7,8 +7,11 @@ let getCountriesController = require('./controllers/countries/getCountries');
 let getCountryCitiesController = require('./controllers/countries/getCountryCities');
 let getCountryCityWithUrlNamesAndLanguageController = require('./controllers/cities/getCountryCityWithUrlNamesAndLanguage');
 let getCountryController = require('./controllers/countries/getCountry');
+let getQuestionController = require('./controllers/questions/getQuestion');
+let getQuestionsController = require('./controllers/questions/getQuestions');
 let postCityController = require('./controllers/cities/postCity');
 let postCountryController = require('./controllers/countries/postCountry');
+let postQuestionController = require('./controllers/questions/postQuestion');
 
 let app = express();
 
@@ -26,5 +29,8 @@ app.get('/api/countries', getCountriesController);
 app.get('/api/countries/:countryId', getCountryController);
 app.get('/api/countries/:countryId/cities', getCountryCitiesController);
 app.get('/api/countries/:countryUrlName/cities/:cityUrlName', getCountryCityWithUrlNamesAndLanguageController);
+app.get('/api/questions', getQuestionsController);
+app.get('/api/questions/:questionId', getQuestionController);
 app.post('/api/countries', postCountryController);
 app.post('/api/countries/:countryId/cities', postCityController);
+app.post('/api/questions', postQuestionController);

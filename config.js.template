@@ -1,5 +1,10 @@
 module.exports = {
   production: true,
+  integrations: {
+    languages: {
+      url: ''
+    }
+  },
   database: {
     username: '',
     password: '',
