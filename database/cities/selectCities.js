@@ -27,6 +27,17 @@ module.exports = {
       [ countryId, language ]
     );
   },
+  withIds(ids) {
+    return db.any(
+      `
+        SELECT city.id AS city_id, country.id AS country_id
+        FROM city
+        JOIN country ON country.id = city.country_id
+        WHERE city.id IN ($1:csv)
+      `,
+      [ ids ]
+    );
+  },
   withIdsAndLanguage(ids, language) {
     return db.any(
       `
