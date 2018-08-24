@@ -18,6 +18,7 @@ module.exports = function() {
 
     this.APINamed = {
       id: this.DBNamed.city_id,
+      language: this.DBNamed.city_language,
       name: this.DBNamed.city_name,
       urlName: this.DBNamed.city_url_name,
       country: countryDataNaming.APINamed

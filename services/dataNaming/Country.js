@@ -13,6 +13,7 @@ module.exports = function() {
 
     this.APINamed = {
       id: this.DBNamed.country_id,
+      language: this.DBNamed.country_language,
       name: this.DBNamed.country_name,
       urlName: this.DBNamed.country_url_name
     };
