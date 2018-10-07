@@ -26,6 +26,8 @@ function initializeCountry(city) {
 function initializeCity(city) {
   return {
     id: city.id,
+    latitude: city.latitude,
+    longitude: city.longitude,
     name: city.name,
     urlName: city.urlName
   };
