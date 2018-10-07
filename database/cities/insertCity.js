@@ -1,8 +1,8 @@
 let db = require('../connection');
 
-module.exports = function(countryId, languageVersions) {
+module.exports = function(countryId, languageVersions, latitude, longitude) {
   return insertCityBase(
-    countryId
+    countryId, latitude, longitude
   ).then(
     city => city.id
   ).then(cityId => {
@@ -23,13 +23,13 @@ function createTranslatedCities(cityId, languageVersions) {
   );
 }
 
-function insertCityBase(countryId) {
+function insertCityBase(countryId, latitude, longitude) {
   return db.one(
     `
-      INSERT INTO city (country_id) VALUES ($1)
+      INSERT INTO city (country_id, latitude, longitude) VALUES ($1, $2, $3)
       RETURNING id AS id
     `,
-    [countryId]
+    [countryId, latitude, longitude]
   );
 }
 

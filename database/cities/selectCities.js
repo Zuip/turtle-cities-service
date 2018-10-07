@@ -2,6 +2,8 @@ let db = require('../connection');
 
 let selectFields = `
   city.id AS city_id,
+  city.latitude AS city_latitude,
+  city.longitude AS city_longitude,
   country.id AS country_id,
   translated_city.name AS city_name,
   translated_city.url_name AS city_url_name,

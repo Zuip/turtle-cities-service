@@ -15,6 +15,7 @@ let getQuestionsController = require('./controllers/questions/getQuestions');
 let postCityController = require('./controllers/cities/postCity');
 let postCountryController = require('./controllers/countries/postCountry');
 let postQuestionController = require('./controllers/questions/postQuestion');
+let putCityController = require('./controllers/cities/putCity');
 let putComparisonController = require('./controllers/comparisons/putComparison');
 
 let app = express();
@@ -41,4 +42,5 @@ app.get('/api/users/:userId/trips/:tripId/cities/comparison', getComparisonContr
 app.post('/api/countries', postCountryController);
 app.post('/api/countries/:countryId/cities', postCityController);
 app.post('/api/questions', postQuestionController);
+app.put('/api/cities/:cityId', putCityController);
 app.put('/api/users/:userId/trips/:tripId/cities/comparison', putComparisonController);

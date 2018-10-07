@@ -1,6 +1,5 @@
-let insertCity = require('../../database/cities/insertCity');
+let updateCity = require('../../database/cities/updateCity');
 let selectCity = require('../../database/cities/selectCity');
-let selectCountry = require('../../database/countries/selectCountry');
 let sendFailureToRes = require('../../services/routing/sendFailureToRes');
 let validateDestinationLanguageVersions = require('../../services/validators/validateDestinationLanguageVersions');
 
@@ -11,19 +10,23 @@ module.exports = function(req, res) {
   return Promise.resolve().then(
     () => validateDestinationLanguageVersions(
       req.body.languageVersions,
-      selectCity.withUrlNameAndLanguage   
+      (urlName, language) => selectCity.withUrlNameAndLanguage(
+        urlName,
+        language
+      ).then(city => {
+        
+        if(parseInt(city.city_id) === parseInt(req.params.cityId)) {
+          return Promise.reject();
+        }
+
+        return city;
+      })
     ).catch(
       error => sendFailure(400, error)
     )
   ).then(
-    () => selectCountry.withId(
-      req.params.countryId
-    ).catch(
-      () => sendFailure(404, "The country does not exist!")
-    )
-  ).then(
-    () => insertCity(
-      req.params.countryId,
+    () => updateCity(
+      req.params.cityId,
       req.body.languageVersions,
       req.body.latitude,
       req.body.longitude
