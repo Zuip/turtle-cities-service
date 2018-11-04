@@ -12,7 +12,7 @@ module.exports = {
         JOIN translated_country ON translated_country.country_id = country.id
         WHERE country.id = $1
       `,
-      [ id ]
+      [id]
     );
   }
 };

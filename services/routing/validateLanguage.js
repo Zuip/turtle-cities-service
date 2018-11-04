@@ -2,7 +2,7 @@ let getLanguage = require('../../integrations/languages/getLanguage');
 
 module.exports = function(language, sendFailure) {
 
-  if(typeof language === 'undefined') {
+  if (typeof language === 'undefined') {
     return sendFailure(
       404,
       'Missing mandatory get parameter: language'

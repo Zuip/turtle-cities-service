@@ -26,7 +26,7 @@ module.exports = {
         )
         WHERE city.id = $1
       `,
-      [ id ]
+      [id]
     );
   },
   withIdAndLanguage(id, language) {
@@ -43,7 +43,7 @@ module.exports = {
         WHERE city.id = $1
         AND translated_city.language = $2
       `,
-      [ id, language ]
+      [id, language]
     );
   },
   withUrlNameAndLanguage(urlName, language) {
@@ -60,7 +60,7 @@ module.exports = {
         WHERE translated_city.url_name = $1
         AND translated_city.language = $2
       `,
-      [ urlName, language ]
+      [urlName, language]
     );
   },
   withCountryUrlNameAndCityUrlNameAndLanguage(countryUrlName, cityUrlName, language) {
@@ -78,7 +78,7 @@ module.exports = {
         AND translated_city.url_name = $2
         AND translated_city.language = $3
       `,
-      [ countryUrlName, cityUrlName, language ]
+      [countryUrlName, cityUrlName, language]
     );
   }
 };

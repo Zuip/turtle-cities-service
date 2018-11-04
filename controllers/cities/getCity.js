@@ -7,7 +7,7 @@ module.exports = function(req, res) {
 
   let sendFailure = sendFailureToRes(res);
 
-  if(typeof req.query.language === 'undefined') {
+  if (typeof req.query.language === 'undefined') {
     return Promise.resolve().then(
       () => selectCity.withId(
         req.params.cityId
@@ -15,8 +15,8 @@ module.exports = function(req, res) {
         500,
         'There was an error in selecting the from database'
       )).then(cityLanguageVersions => {
-        
-        if(cityLanguageVersions.length === 0) {
+
+        if (cityLanguageVersions.length === 0) {
           return sendFailure(404);
         }
 
@@ -32,7 +32,7 @@ module.exports = function(req, res) {
             cityDataNaming = new CityDataNaming();
             cityDataNaming.DBNamed = cityLanguageVersion;
             cityDataNaming.transformDBToAPINamed();
-            
+
             let APINamed = cityDataNaming.APINamed;
             delete APINamed.id;
             delete APINamed.latitude;
@@ -46,7 +46,7 @@ module.exports = function(req, res) {
       city => res.json(city)
     ).catch(() => {
       // Promise chain ended
-    })
+    });
   }
 
   Promise.resolve().then(
@@ -73,5 +73,5 @@ module.exports = function(req, res) {
     res.json(city);
   }).catch(() => {
     // Promise chain ended
-  })
+  });
 };

@@ -20,7 +20,7 @@ module.exports = function(req, res) {
     ).catch(
       () => sendFailure(500, {
         success: false,
-        message: "Saving country failed"
+        message: 'Saving country failed'
       })
     )
   ).then(() => {

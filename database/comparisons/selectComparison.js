@@ -12,7 +12,7 @@ module.exports = {
         WHERE comparison.user_id = $1
         AND comparison.trip_id = $2
       `,
-      [ userId, tripId ]
+      [userId, tripId]
     );
   }
 };

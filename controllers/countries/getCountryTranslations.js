@@ -38,7 +38,7 @@ module.exports = function(req, res) {
 
 function validateLanguageParameter(req, sendFailure) {
 
-  if(isNaN(req.params.countryId)) {   
+  if (isNaN(req.params.countryId)) {
     return Promise.resolve().then(
       () => validateLanguage(
         req.query.language
@@ -54,7 +54,7 @@ function validateLanguageParameter(req, sendFailure) {
 
 function getSelectCountryPromise(req) {
 
-  if(isNaN(req.params.countryId)) {
+  if (isNaN(req.params.countryId)) {
     return selectCountry.withUrlNameAndLanguage(
       req.params.countryId,
       req.query.language

@@ -20,7 +20,7 @@ module.exports = {
         )
         WHERE city.id = $1
       `,
-      [ id ]
+      [id]
     );
   }
 };

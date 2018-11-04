@@ -4,7 +4,7 @@ module.exports = function(cities) {
 
   cities.map(city => {
 
-    if(typeof countries[city.country.id] === 'undefined') {
+    if (typeof countries[city.country.id] === 'undefined') {
       countries[city.country.id] = initializeCountry(city);
     }
 

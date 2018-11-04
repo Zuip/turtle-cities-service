@@ -35,7 +35,7 @@ module.exports = function(req, res) {
 
 function getSelectCountryPromise(req) {
 
-  if(isNaN(req.params.countryId)) {
+  if (isNaN(req.params.countryId)) {
     return selectCountry.withUrlNameAndLanguage(
       req.params.countryId,
       req.query.language

@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "eslint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1",
     "knex": "knex"
   },
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/Zuip/turtle-auth#readme",
   "devDependencies": {
+    "eslint": "^5.8.0",
     "knex": "^0.15.1"
   },
   "dependencies": {

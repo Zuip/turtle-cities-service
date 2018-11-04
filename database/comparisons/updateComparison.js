@@ -44,7 +44,7 @@ module.exports = function(userId, tripId, rankedCities) {
 
 function deleteComparisonCities(userId, tripId, cityIds) {
 
-  if(cityIds.length === 0) {
+  if (cityIds.length === 0) {
     return;
   }
 
@@ -67,7 +67,7 @@ function updateComparisonCities(userId, tripId, rankedCities, cityIdsToUpdate) {
   return Promise.all(
     rankedCities.map((cityId, rankIndex) => {
 
-      if(!cityIdsToUpdate.includes(cityId)) {
+      if (!cityIdsToUpdate.includes(cityId)) {
         return;
       }
 
@@ -98,7 +98,7 @@ function createComparisonCities(userId, tripId, rankedCities, newCityIds) {
   return Promise.all(
     rankedCities.map((cityId, rankIndex) => {
 
-      if(!newCityIds.includes(cityId)) {
+      if (!newCityIds.includes(cityId)) {
         return;
       }
 

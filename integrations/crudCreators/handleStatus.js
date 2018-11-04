@@ -1,6 +1,6 @@
 module.exports = function(response) {
 
-  if(response.status === 200) {
+  if (response.status === 200) {
     return Promise.resolve(response);
   }
 

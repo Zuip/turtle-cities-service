@@ -8,7 +8,7 @@ module.exports = {
         FROM country
         WHERE country.id = $1
       `,
-      [ id ]
+      [id]
     );
   },
   withIdAndLanguage(id, language) {
@@ -22,7 +22,7 @@ module.exports = {
         WHERE country.id = $1
         AND translated_country.language = $2
       `,
-      [ id, language ]
+      [id, language]
     );
   },
   withUrlNameAndLanguage(urlName, language) {
@@ -36,7 +36,7 @@ module.exports = {
         WHERE translated_country.url_name = $1
         AND translated_country.language = $2
       `,
-      [ urlName, language ]
+      [urlName, language]
     );
   }
 };

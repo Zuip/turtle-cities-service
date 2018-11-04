@@ -32,5 +32,5 @@ module.exports = function(req, res) {
     res.json(city);
   }).catch(() => {
     // Promise chain ended
-  })
+  });
 };

@@ -14,8 +14,8 @@ module.exports = function(req, res) {
         urlName,
         language
       ).then(city => {
-        
-        if(parseInt(city.city_id) === parseInt(req.params.cityId)) {
+
+        if (parseInt(city.city_id) === parseInt(req.params.cityId)) {
           return Promise.reject();
         }
 
@@ -33,7 +33,7 @@ module.exports = function(req, res) {
     ).catch(
       () => sendFailure(500, {
         success: false,
-        message: "Saving city failed"
+        message: 'Saving city failed'
       })
     )
   ).then(() => {

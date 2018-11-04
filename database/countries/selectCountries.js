@@ -13,7 +13,7 @@ module.exports = {
         )
         WHERE translated_country.language = $1
       `,
-      [ language ]
+      [language]
     );
   }
 };

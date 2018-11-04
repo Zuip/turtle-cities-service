@@ -12,7 +12,7 @@ module.exports = {
         )
         WHERE translated_question.language = $1
       `,
-      [ language ]
+      [language]
     );
   }
 };

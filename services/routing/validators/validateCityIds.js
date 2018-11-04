@@ -2,7 +2,7 @@ let selectCities = require('../../../database/cities/selectCities');
 
 module.exports = function(cityIds, sendFailure) {
 
-  if(cityIds.length === 0) {
+  if (cityIds.length === 0) {
     return Promise.resolve();
   }
 
@@ -40,7 +40,7 @@ function validateCityIds(cityIds, validCityIds) {
   return Promise.all(
     cityIds.map(cityId => {
 
-      if(validCityIds.includes(parseInt(cityId))) {
+      if (validCityIds.includes(parseInt(cityId))) {
         return Promise.resolve();
       }
 

@@ -11,7 +11,7 @@ module.exports = function(req, res) {
   return Promise.resolve().then(
     () => validateDestinationLanguageVersions(
       req.body.languageVersions,
-      selectCity.withUrlNameAndLanguage   
+      selectCity.withUrlNameAndLanguage
     ).catch(
       error => sendFailure(400, error)
     )
@@ -19,7 +19,7 @@ module.exports = function(req, res) {
     () => selectCountry.withId(
       req.params.countryId
     ).catch(
-      () => sendFailure(404, "The country does not exist!")
+      () => sendFailure(404, 'The country does not exist!')
     )
   ).then(
     () => insertCity(
@@ -30,7 +30,7 @@ module.exports = function(req, res) {
     ).catch(
       () => sendFailure(500, {
         success: false,
-        message: "Saving city failed"
+        message: 'Saving city failed'
       })
     )
   ).then(() => {

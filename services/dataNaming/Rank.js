@@ -1,5 +1,5 @@
 let CityDataNaming = require('./City');
-let isEmptyObject = require('../objectFunctionalities/isEmptyObject');
+let isEmptyObject = require('../../turtlelib/objects/isEmptyObject');
 
 module.exports = function() {
 
@@ -8,7 +8,7 @@ module.exports = function() {
 
   this.transformDBToAPINamed = function() {
 
-    if(typeof this.DBNamed === 'undefined') {
+    if (typeof this.DBNamed === 'undefined') {
       return;
     }
 
@@ -27,7 +27,7 @@ module.exports = function() {
       rank: this.DBNamed.rank
     };
 
-    if(isEmptyObject(this.APINamed)) {
+    if (isEmptyObject(this.APINamed)) {
       this.APINamed = undefined;
     }
   };

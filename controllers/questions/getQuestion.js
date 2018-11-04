@@ -26,5 +26,5 @@ module.exports = function(req, res) {
     question => res.json(question)
   ).catch(() => {
     // Promise chain ended
-  })
+  });
 };

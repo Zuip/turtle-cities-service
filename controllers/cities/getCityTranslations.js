@@ -24,5 +24,5 @@ module.exports = function(req, res) {
     city => res.json(city)
   ).catch(() => {
     // Promise chain ended
-  })
+  });
 };

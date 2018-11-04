@@ -33,19 +33,19 @@ module.exports = function(req, res) {
     res.json(mapCitiesToCountries(cities));
   }).catch(() => {
     // Promise chain ended
-  })
+  });
 };
 
 function getSelectCitiesPromise(req) {
 
-  if(typeof req.params.cityId !== 'undefined') {
+  if (typeof req.params.cityId !== 'undefined') {
     return selectCities.withCountryIdAndLanguage(
       req.params.cityId,
       req.query.language
     );
   }
 
-  if(typeof req.query.ids !== 'undefined') {
+  if (typeof req.query.ids !== 'undefined') {
     return selectCities.withIdsAndLanguage(
       req.query.ids.split(','),
       req.query.language

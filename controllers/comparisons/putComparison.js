@@ -19,7 +19,7 @@ module.exports = function(req, res) {
     ).catch(
       () => sendFailure(500, {
         success: false,
-        message: "Saving comparison failed"
+        message: 'Saving comparison failed'
       })
     )
   ).then(() => {

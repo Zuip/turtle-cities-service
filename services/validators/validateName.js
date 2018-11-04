@@ -1,6 +1,6 @@
 module.exports = function(name) {
 
-  if(typeof name !== 'string') {
+  if (typeof name !== 'string') {
     return false;
   }
 

@@ -26,7 +26,7 @@ module.exports = {
         WHERE country.id = $1
         AND translated_city.language = $2
       `,
-      [ countryId, language ]
+      [countryId, language]
     );
   },
   withIds(ids) {
@@ -37,7 +37,7 @@ module.exports = {
         JOIN country ON country.id = city.country_id
         WHERE city.id IN ($1:csv)
       `,
-      [ ids ]
+      [ids]
     );
   },
   withIdsAndLanguage(ids, language) {
@@ -54,7 +54,7 @@ module.exports = {
         WHERE city.id IN ($1:csv)
         AND translated_city.language = $2
       `,
-      [ ids, language ]
+      [ids, language]
     );
   },
   withLanguage(language) {
@@ -70,7 +70,7 @@ module.exports = {
         )
         WHERE translated_country.language = $1
       `,
-      [ language ]
+      [language]
     );
   }
 };

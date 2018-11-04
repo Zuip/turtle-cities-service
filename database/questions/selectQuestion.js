@@ -8,7 +8,7 @@ module.exports = {
         FROM question
         WHERE question.id = $1
       `,
-      [ id ]
+      [id]
     );
   },
   withIdAndLanguage(id, language) {
@@ -21,7 +21,7 @@ module.exports = {
         WHERE question.id = $1
         AND translated_question.language = $2
       `,
-      [ id, language ]
+      [id, language]
     );
   }
 };
