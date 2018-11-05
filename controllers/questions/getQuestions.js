@@ -1,7 +1,7 @@
 let QuestionDataNaming = require('../../services/dataNaming/Question');
 let selectQuestions = require('../../database/questions/selectQuestions');
-let sendFailureToRes = require('../../services/routing/sendFailureToRes');
-let validateLanguage = require('../../services/routing/validateLanguage');
+let sendFailureToRes = require('../../turtlelib/routing/sendFailureToRes');
+let validateLanguage = require('../../turtlelib/routing/validateLanguage');
 
 module.exports = function(req, res) {
 

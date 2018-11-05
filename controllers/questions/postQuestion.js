@@ -1,6 +1,6 @@
 let insertQuestion = require('../../database/questions/insertQuestion');
 let selectQuestion = require('../../database/questions/selectQuestion');
-let sendFailureToRes = require('../../services/routing/sendFailureToRes');
+let sendFailureToRes = require('../../turtlelib/routing/sendFailureToRes');
 let validateQuestionLanguageVersions = require('../../services/validators/validateQuestionLanguageVersions');
 
 module.exports = function(req, res) {

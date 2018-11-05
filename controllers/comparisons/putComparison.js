@@ -1,5 +1,5 @@
 let updateComparison = require('../../database/comparisons/updateComparison');
-let sendFailureToRes = require('../../services/routing/sendFailureToRes');
+let sendFailureToRes = require('../../turtlelib/routing/sendFailureToRes');
 let validateCityIds = require('../../services/routing/validators/validateCityIds');
 
 module.exports = function(req, res) {

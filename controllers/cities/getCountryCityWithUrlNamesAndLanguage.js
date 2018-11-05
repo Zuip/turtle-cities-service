@@ -1,7 +1,7 @@
 let CityDataNaming = require('../../services/dataNaming/City');
 let selectCity = require('../../database/cities/selectCity');
-let sendFailureToRes = require('../../services/routing/sendFailureToRes');
-let validateLanguage = require('../../services/routing/validateLanguage');
+let sendFailureToRes = require('../../turtlelib/routing/sendFailureToRes');
+let validateLanguage = require('../../turtlelib/routing/validateLanguage');
 
 module.exports = function(req, res) {
 

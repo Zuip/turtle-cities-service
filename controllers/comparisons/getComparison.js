@@ -1,6 +1,6 @@
 let RankDataNaming = require('../../services/dataNaming/Rank');
 let selectComparison = require('../../database/comparisons/selectComparison');
-let sendFailureToRes = require('../../services/routing/sendFailureToRes');
+let sendFailureToRes = require('../../turtlelib/routing/sendFailureToRes');
 
 module.exports = function(req, res) {
 

@@ -1,6 +1,6 @@
 let updateCity = require('../../database/cities/updateCity');
 let selectCity = require('../../database/cities/selectCity');
-let sendFailureToRes = require('../../services/routing/sendFailureToRes');
+let sendFailureToRes = require('../../turtlelib/routing/sendFailureToRes');
 let validateDestinationLanguageVersions = require('../../services/validators/validateDestinationLanguageVersions');
 
 module.exports = function(req, res) {

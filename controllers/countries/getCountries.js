@@ -1,7 +1,7 @@
 let CountryDataNaming = require('../../services/dataNaming/Country');
 let selectCountries = require('../../database/countries/selectCountries');
-let sendFailureToRes = require('../../services/routing/sendFailureToRes');
-let validateLanguage = require('../../services/routing/validateLanguage');
+let sendFailureToRes = require('../../turtlelib/routing/sendFailureToRes');
+let validateLanguage = require('../../turtlelib/routing/validateLanguage');
 
 module.exports = function(req, res) {
 

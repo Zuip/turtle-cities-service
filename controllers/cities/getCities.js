@@ -1,8 +1,8 @@
 let CityDataNaming = require('../../services/dataNaming/City');
 let mapCitiesToCountries = require('../../services/mapCitiesToCountries');
 let selectCities = require('../../database/cities/selectCities');
-let sendFailureToRes = require('../../services/routing/sendFailureToRes');
-let validateLanguage = require('../../services/routing/validateLanguage');
+let sendFailureToRes = require('../../turtlelib/routing/sendFailureToRes');
+let validateLanguage = require('../../turtlelib/routing/validateLanguage');
 
 module.exports = function(req, res) {
 
@@ -10,11 +10,9 @@ module.exports = function(req, res) {
 
   Promise.resolve().then(
     () => validateLanguage(
-      req.query.language
-    ).catch(() => sendFailure(
-      404,
-      'Missing mandatory get parameter: language'
-    ))
+      req.query.language,
+      sendFailure
+    )
   ).then(
     () => getSelectCitiesPromise(
       req
