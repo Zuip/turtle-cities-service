@@ -40,12 +40,7 @@ function validateLanguageParameter(req, sendFailure) {
 
   if (isNaN(req.params.countryId)) {
     return Promise.resolve().then(
-      () => validateLanguage(
-        req.query.language
-      ).catch(() => sendFailure(
-        404,
-        'Missing mandatory get parameter: language'
-      ))
+      () => validateLanguage(req.query.language, sendFailure)
     );
   }
 

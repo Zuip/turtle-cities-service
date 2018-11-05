@@ -50,12 +50,7 @@ module.exports = function(req, res) {
   }
 
   Promise.resolve().then(
-    () => validateLanguage(
-      req.query.language
-    ).catch(() => sendFailure(
-      404,
-      'Missing mandatory get parameter: language'
-    ))
+    () => validateLanguage(req.query.language, sendFailure)
   ).then(
     () => selectCity.withIdAndLanguage(
       req.params.cityId,

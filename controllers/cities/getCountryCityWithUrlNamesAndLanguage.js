@@ -8,12 +8,7 @@ module.exports = function(req, res) {
   let sendFailure = sendFailureToRes(res);
 
   Promise.resolve().then(
-    () => validateLanguage(
-      req.query.language
-    ).catch(() => sendFailure(
-      404,
-      'Missing mandatory get parameter: language'
-    ))
+    () => validateLanguage(req.query.language, sendFailure)
   ).then(
     () => selectCity.withCountryUrlNameAndCityUrlNameAndLanguage(
       req.params.countryUrlName,

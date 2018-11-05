@@ -9,10 +9,7 @@ module.exports = function(req, res) {
   let sendFailure = sendFailureToRes(res);
 
   Promise.resolve().then(
-    () => validateLanguage(
-      req.query.language,
-      sendFailure
-    )
+    () => validateLanguage(req.query.language, sendFailure)
   ).then(
     () => getSelectCitiesPromise(
       req
